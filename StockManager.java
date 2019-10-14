@@ -72,12 +72,11 @@ public class StockManager
     public int numberInStock(int id)
     {
         for(Product pro : stock)
-        {
-            if(pro.getID() == id)
-            {
-                return id;
-            }
-        }
+        if(pro != null)
+            return pro.getQuantity();
+        else
+        return 0;
+        
         return 0;
     }
 
@@ -102,4 +101,5 @@ public class StockManager
             }
         }
     }
+    
 }    
