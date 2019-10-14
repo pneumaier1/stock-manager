@@ -37,8 +37,15 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
-    }
-    
+        for(Product pro : stock)
+        {
+            if(pro.getID() == id)
+            {
+                amount = amount++;
+                break;
+            }        
+        }
+    }    
     /**
      * Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
@@ -46,9 +53,15 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
+        for(Product pro: stock)
+        {
+            if(pro.getID() == id)
+            {
+                return pro;
+            }
+        }
         return null;
     }
-    
     /**
      * Locate a product with the given ID, and return how
      * many of this item are in stock. If the ID does not
@@ -58,6 +71,13 @@ public class StockManager
      */
     public int numberInStock(int id)
     {
+        for(Product pro : stock)
+        {
+            if(pro.getID() == id)
+            {
+                return id;
+            }
+        }
         return 0;
     }
 
@@ -66,5 +86,20 @@ public class StockManager
      */
     public void printProductDetails()
     {
+        if(stock.size() == 0)
+        {
+            System.out.println("No product in stock to print details");
+        }
+        else
+        {
+            System.out.println("Details of product:");
+            
+            for(Product pro : stock)
+            {
+                    System.out.println(pro.toString());
+                    
+        
+            }
+        }
     }
-}
+}    
