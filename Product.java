@@ -1,4 +1,9 @@
-/**
+
+
+
+
+import java.util.ArrayList;
+/** 
  * Model some details of a product sold by a company.
  * 
  * @author David J. Barnes and Michael Kölling.
@@ -93,4 +98,14 @@ public class Product
                 "Attempt to sell an out of stock item: " + name);
         }
     }
+    private static Object findProduct(int ID)
+    {
+        ArrayList product = new ArrayList();
+        Product prod1 = new Product(101,"Butter 25.0");
+        Product prod2 = new Product(102,"Eggs: 25.0");
+        product.add(prod1);
+        product.add(prod2);
+        return null;
+    }
 }
+
