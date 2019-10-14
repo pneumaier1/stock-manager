@@ -41,8 +41,7 @@ public class StockManager
         {
             if(pro.getID() == id)
             {
-                amount = amount++;
-                break;
+                pro.increaseQuantity(amount);
             }        
         }
     }    
