@@ -27,6 +27,17 @@ public class StockManager
     public void addProduct(Product item)
     {
         stock.add(item);
+        Boolean itemFound = false;
+        for(Product pro: stock)
+        {
+            if(pro.getID() == item.getID())
+            {
+                itemFound = true;
+                break;
+            }
+        }
+        if(itemFound == false)
+            stock.add(item);
     }
     
     /**
@@ -95,10 +106,7 @@ public class StockManager
             for(Product pro : stock)
             {
                     System.out.println(pro.toString());
-                    
-        
             }
         }
     }
-    
 }    
